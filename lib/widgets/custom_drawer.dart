@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -54,11 +55,17 @@ class CustomDrawer extends StatelessWidget {
                   style: TextStyle(fontSize: 16.0, color: Colors.orange),
                 ),
                 const SizedBox(height: 8.0),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    'The Bhagavad Gita (Sanskrit: भगवद्गीता।, lit. "भगवान का गाना"), जिसे अक्सर गीता कहा जाता है, एक 701-श्लोक हिन्दू शास्त्र है जो महाभारत के भीष्म पर्व के अंश में स्थित है (अध्याय 23–40), जिसका समय दूसरे सदी ईसा पूर्व का दिनांक माना जाता है। इसे हिन्दू धर्म के मुख्य पवित्र ग्रंथों में से एक माना जाता है।',
-                    textAlign: TextAlign.center,
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      TypewriterAnimatedText(
+                        'The Bhagavad Gita (Sanskrit: भगवद्गीता।, lit. "भगवान का गाना"), जिसे अक्सर गीता कहा जाता है, एक 701-श्लोक हिन्दू शास्त्र है जो महाभारत के भीष्म पर्व के अंश में स्थित है (अध्याय 23–40), जिसका समय दूसरे सदी ईसा पूर्व का दिनांक माना जाता है। इसे हिन्दू धर्म के मुख्य पवित्र ग्रंथों में से एक माना जाता है।',
+                      ),
+                    ],
+                    isRepeatingAnimation: true,
+                    repeatForever: true,
+                    pause: const Duration(milliseconds: 3500),
                   ),
                 ),
                 const SizedBox(height: 24.0),
