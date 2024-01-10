@@ -97,10 +97,11 @@ class AboutUsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
-                  'Meet the Makers',
+                  'Meet the Maker',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -137,7 +138,18 @@ class AboutUsScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Text(role),
+          InkWell(
+            onTap: () {
+              launchGivenUrl('https://stp2003.github.io/');
+            },
+            child: Text(
+              role,
+              style: const TextStyle(
+                color: Colors.blueAccent,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
