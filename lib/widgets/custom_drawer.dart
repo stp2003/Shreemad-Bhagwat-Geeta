@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bhagwad_gita/functions/launch_url.dart';
 import 'package:bhagwad_gita/screens/about_us_screen.dart';
@@ -48,17 +49,25 @@ class CustomDrawer extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.book),
               title: const Text(
-                'Bhagwad Gita',
+                'Dark Mode',
                 style: TextStyle(
                   letterSpacing: 0.8,
                 ),
               ),
-              onTap: () {},
+              trailing: InkWell(
+                onTap: () {
+                  AdaptiveTheme.of(context).toggleThemeMode();
+                },
+                child: Icon(
+                  Theme.of(context).brightness == Brightness.light
+                      ? Icons.toggle_off_outlined
+                      : Icons.toggle_on_sharp,
+                ),
+              ),
             ),
             ListTile(
-              leading: const Icon(Icons.info_outline),
+              trailing: const Icon(Icons.info_outline),
               title: const Text(
                 'About',
                 style: TextStyle(
@@ -74,7 +83,7 @@ class CustomDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.share),
+              trailing: const Icon(Icons.share),
               title: const Text(
                 'Share',
                 style: TextStyle(
@@ -85,7 +94,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.api),
+              trailing: const Icon(Icons.api),
               title: const Text(
                 'API',
                 style: TextStyle(
