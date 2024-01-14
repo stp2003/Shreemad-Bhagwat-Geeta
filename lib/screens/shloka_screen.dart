@@ -2,7 +2,7 @@ import 'package:bhagwad_gita/functions/functions.dart';
 import 'package:bhagwad_gita/utils/custom_loader.dart';
 import 'package:flutter/material.dart';
 
-import '../Models/Shloka_Model.dart';
+import '../Models/shloka_model.dart';
 
 class ShlokaScreen extends StatefulWidget {
   final int sk;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Models/Chapters_Model.dart';
+import '../Models/chapters_model.dart';
 import 'shloka_screen.dart';
 
 class ChapterScreen extends StatefulWidget {

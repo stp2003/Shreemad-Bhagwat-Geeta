@@ -4,7 +4,7 @@ import 'package:bhagwad_gita/widgets/custom_app_bar.dart';
 import 'package:bhagwad_gita/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
-import '../Models/Chapters_Model.dart';
+import '../Models/chapters_model.dart';
 import '../db/database.dart';
 import '../widgets/AdhayListTile.dart';
 

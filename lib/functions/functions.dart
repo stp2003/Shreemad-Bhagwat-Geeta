@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 
-import '../Models/Chapters_Model.dart';
-import '../Models/Shloka_Model.dart';
+import '../Models/chapters_model.dart';
+import '../Models/shloka_model.dart';
 
 class Functions {
   static Future<List<GeetaChapters>> getGeetaChapters() async {

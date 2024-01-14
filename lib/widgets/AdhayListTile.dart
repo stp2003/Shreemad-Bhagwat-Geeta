@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Models/Chapters_Model.dart';
+import '../Models/chapters_model.dart';
 import '../screens/chapter_screen.dart';
 
 class AdhayListTile extends StatelessWidget {
