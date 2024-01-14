@@ -16,7 +16,10 @@ class AboutUsScreen extends StatelessWidget {
           children: [
             _buildHeader(context),
             _buildTextSection(),
-            const Divider(thickness: 2.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: Divider(thickness: 2.0),
+            ),
             _buildMakersInfoCard(context),
           ],
         ),
@@ -27,7 +30,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget _buildHeader(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20.0),
+      padding: const EdgeInsets.symmetric(vertical: 15.0),
       child: Container(
         height: size.height * 0.40,
         width: size.width * 0.8,
@@ -49,13 +52,13 @@ class AboutUsScreen extends StatelessWidget {
 
   Widget _buildTextSection() {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.only(bottom: 16.0, left: 16.0, right: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Center(
             child: Text(
-              "Bhagavadgītā\n[श्रीमद् भगवद् गीता]",
+              "BhagavadGītā\n[श्रीमद् भगवद् गीता]",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 24.0, color: Colors.orange),
             ),
