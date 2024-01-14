@@ -81,10 +81,17 @@ class _ShlokaScreenState extends State<ShlokaScreen> {
                           fontWeight: FontWeight.w300,
                           letterSpacing: 0.8,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                       const Divider(thickness: 1.5),
                       const SizedBox(height: 25.0),
-                      Image.asset('assets/shree_krishna.jpg'),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: Image.asset(
+                          'assets/shree_krishna.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                       const SizedBox(height: 15.0),
                     ],
                   ),

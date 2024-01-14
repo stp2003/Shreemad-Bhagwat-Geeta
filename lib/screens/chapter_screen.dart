@@ -77,19 +77,27 @@ class _ChapterScreenState extends State<ChapterScreen> {
                 ),
               ),
               const SizedBox(height: 22.0),
-              SelectableText(
-                widget.chapters.summary.hi,
-                style: const TextStyle(
-                  fontSize: 20.0,
-                  letterSpacing: 0.4,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: SelectableText(
+                  widget.chapters.summary.hi,
+                  style: const TextStyle(
+                    fontSize: 20.0,
+                    letterSpacing: 0.4,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(height: 16.0),
-              SelectableText(
-                widget.chapters.summary.en,
-                style: const TextStyle(
-                  fontSize: 20.0,
-                  letterSpacing: 0.4,
+              const Divider(thickness: 1.0),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: SelectableText(
+                  widget.chapters.summary.en,
+                  style: const TextStyle(
+                    fontSize: 20.0,
+                    letterSpacing: 0.4,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
               const Divider(thickness: 2.0),
