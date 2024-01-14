@@ -5,6 +5,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bhagwad_gita/functions/launch_url.dart';
 import 'package:bhagwad_gita/screens/about_us_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:wiredash/wiredash.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -91,7 +92,9 @@ class CustomDrawer extends StatelessWidget {
                   letterSpacing: 0.8,
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Wiredash.of(context).show(inheritMaterialTheme: true);
+              },
             ),
             const Divider(),
             ListTile(
