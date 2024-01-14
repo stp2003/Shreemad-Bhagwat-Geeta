@@ -5,6 +5,7 @@ import 'package:bhagwad_gita/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 import '../Models/Chapters_Model.dart';
+import '../db/database.dart';
 import '../widgets/AdhayListTile.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _loading = true;
+    Database.showOnboarding = false;
     Functions.getGeetaChapters().then(
       (geetaChapters) {
         setState(() {

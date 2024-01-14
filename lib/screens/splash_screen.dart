@@ -1,3 +1,5 @@
+import 'package:bhagwad_gita/db/database.dart';
+import 'package:bhagwad_gita/screens/home_screen.dart';
 import 'package:bhagwad_gita/screens/onboarding_screen.dart';
 import 'package:bhagwad_gita/widgets/welcome_loader.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,9 @@ class _SplashScreenState extends State<SplashScreen> {
       () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (_) => const OnboardingScreen(),
+            builder: (_) => Database.showOnboarding
+                ? const OnboardingScreen()
+                : const HomeScreen(),
           ),
         );
       },
