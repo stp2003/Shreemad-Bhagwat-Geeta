@@ -1,7 +1,6 @@
+import 'package:bhagwad_gita/screens/onboarding_screen.dart';
 import 'package:bhagwad_gita/widgets/welcome_loader.dart';
 import 'package:flutter/material.dart';
-
-import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (_) => const HomeScreen(),
+            builder: (_) => const OnboardingScreen(),
           ),
         );
       },
