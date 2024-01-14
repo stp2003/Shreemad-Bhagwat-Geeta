@@ -84,9 +84,9 @@ class CustomDrawer extends StatelessWidget {
               },
             ),
             ListTile(
-              trailing: const Icon(Icons.share),
+              trailing: const Icon(Icons.feedback_outlined),
               title: const Text(
-                'Share',
+                'Feedback',
                 style: TextStyle(
                   letterSpacing: 0.8,
                 ),
