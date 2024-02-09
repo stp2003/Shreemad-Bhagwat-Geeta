@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 import '../Models/chapters_model.dart';
 import 'shloka_screen.dart';
@@ -18,6 +20,15 @@ class ChapterScreen extends StatefulWidget {
 }
 
 class _ChapterScreenState extends State<ChapterScreen> {
+  final FlutterTts flutterTts = FlutterTts();
+
+  //??
+  speak(String text, String language) async {
+    await flutterTts.setLanguage(language);
+    await flutterTts.setPitch(1);
+    await flutterTts.speak(text);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,28 +88,50 @@ class _ChapterScreenState extends State<ChapterScreen> {
                 ),
               ),
               const SizedBox(height: 22.0),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: SelectableText(
-                  widget.chapters.summary.hi,
-                  style: const TextStyle(
-                    fontSize: 20.0,
-                    letterSpacing: 0.4,
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: SelectableText(
+                      widget.chapters.summary.hi,
+                      style: const TextStyle(
+                        fontSize: 20.0,
+                        letterSpacing: 0.4,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                  InkWell(
+                    onTap: () => speak(
+                      widget.chapters.summary.hi,
+                      'hi-IN',
+                    ),
+                    child: const Icon(CupertinoIcons.speaker_2),
+                  ),
+                ],
               ),
               const Divider(thickness: 1.0),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: SelectableText(
-                  widget.chapters.summary.en,
-                  style: const TextStyle(
-                    fontSize: 20.0,
-                    letterSpacing: 0.4,
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: SelectableText(
+                      widget.chapters.summary.en,
+                      style: const TextStyle(
+                        fontSize: 20.0,
+                        letterSpacing: 0.4,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                  InkWell(
+                    onTap: () => speak(
+                      widget.chapters.summary.en,
+                      'en-US',
+                    ),
+                    child: const Icon(CupertinoIcons.speaker_2),
+                  ),
+                ],
               ),
               const Divider(thickness: 2.0),
               const SizedBox(height: 16.0),
